@@ -145,7 +145,7 @@ class CreateProjectMedia extends Component {
 
     const onSuccess = (response) => {
       const rid = response.createProjectMedia.project_media.dbid;
-      context.history.push(prefix + rid);
+      // context.history.push(prefix + rid);
       this.setState({ message: null, isSubmitting: false });
     };
 
@@ -161,7 +161,7 @@ class CreateProjectMedia extends Component {
       { onSuccess, onFailure },
     );
       
-    context.history.push(prefix + '0?title=' + title);
+    // context.history.push(prefix + '0?title=' + title);
   }
 
   submitSource() {

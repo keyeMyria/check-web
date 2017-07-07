@@ -4,6 +4,7 @@ import CheckContext from '../../CheckContext';
 import MediaRoute from '../../relay/MediaRoute';
 import MediaParentComponent from './MediaParentComponent';
 import MediasLoading from './MediasLoading';
+import { optimisticProjectMedia } from '../../relay/optimisticProjectMedia'
 
 const MediaContainer = Relay.createContainer(MediaParentComponent, {
   initialVariables: {
@@ -225,6 +226,21 @@ const MediaContainer = Relay.createContainer(MediaParentComponent, {
 
 class ProjectMedia extends Component {
   render() {
+    if (parseInt(this.props.params.mediaId) === 0) {
+      let title = document.location.search.replace(/^\?title=/, '');
+      if (title === '') {
+        title = '...';
+      }
+      const context = new CheckContext(this).getContextStore();
+      const project = context.project;
+      const media = optimisticProjectMedia(title, project, context);
+      const relay = {
+        variables: { contextId: this.props.params.projectId },
+        setVariables: function() { }
+      };
+      return (<MediaParentComponent media={media.project_mediaEdge.node} relay={relay} />);
+    }
+
     let projectId = this.props.params.projectId || 0;
     const context = new CheckContext(this);
     context.setContext();

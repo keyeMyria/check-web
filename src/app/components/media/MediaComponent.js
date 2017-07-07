@@ -65,7 +65,7 @@ class MediaComponent extends Component {
 
   subscribe() {
     const pusher = this.getContext().pusher;
-    if (pusher) {
+    if (pusher && this.props.media.pusher_channel) {
       const that = this;
       pusher.subscribe(this.props.media.pusher_channel).bind('media_updated', (data) => {
         const annotation = JSON.parse(data.message);

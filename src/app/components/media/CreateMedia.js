@@ -104,6 +104,17 @@ class CreateProjectMedia extends Component {
       }
     }
 
+    let title = 'Media';
+    if (quote != '') {
+      title = quote;
+    }
+    if (url != '') {
+      title = url;
+    }
+    if (image != '') {
+      title = image.name;
+    }
+
     this.setState({ isSubmitting: true, message: this.props.intl.formatMessage(messages.submitting) });
 
     const handleError = (json) => {
@@ -143,10 +154,14 @@ class CreateProjectMedia extends Component {
         url,
         quote,
         image,
+        context,
+        title,
         project: context.project,
       }),
       { onSuccess, onFailure },
     );
+      
+    context.history.push(prefix + '0?title=' + title);
   }
 
   submitSource() {

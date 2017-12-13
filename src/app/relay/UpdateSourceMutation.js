@@ -10,10 +10,8 @@ class UpdateSourceMutation extends Relay.Mutation {
   getFatQuery() {
     return Relay.QL`fragment on UpdateSourcePayload {
       source {
-        name,
-        image,
-        description,
-        lock_version,
+        id,
+        dbid,
       }
     }`;
   }

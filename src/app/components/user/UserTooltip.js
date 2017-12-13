@@ -184,11 +184,9 @@ const UserTooltipContainer = Relay.createContainer(injectIntl(UserTooltipCompone
             }
           }
         },
-        source {
+        source {     
           id,
           dbid,
-          image,
-          description,
           created_at,
           account_sources(first: 10000) {
             edges {

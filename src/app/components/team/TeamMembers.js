@@ -25,7 +25,6 @@ const TeamContainer = Relay.createContainer(TeamMembersComponent, {
                 source {
                   id,
                   dbid,
-                  image,
                 }
               },
               status,

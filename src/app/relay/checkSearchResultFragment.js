@@ -36,7 +36,7 @@ const checkSearchResultFragment = Relay.QL`
           project_source {
             dbid,
             project_id,
-            source {
+            team_source {
               name
             }
           },
@@ -88,21 +88,19 @@ const checkSearchResultFragment = Relay.QL`
           published,
           updated_at,
           source_id,
-          source {
-            id,
-            dbid,
-            name,
-            description,
-            image,
-            accounts(first: 10000) {
-              edges {
-                node {
-                  id,
-                  data,
-                  embed,
-                  provider,
-                  url
-                }
+          id,
+          dbid,
+          name,
+          description,
+          image,
+          accounts(first: 10000) {
+            edges {
+              node {
+                id,
+                data,
+                embed,
+                provider,
+                url
               }
             }
           },

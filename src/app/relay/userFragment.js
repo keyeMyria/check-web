@@ -38,7 +38,21 @@ const userFragment = Relay.QL`
       }
     },
     source {
-      ${sourceFragment}
+      account_sources(first: 10000) {
+        edges {
+          node {
+            id,
+            account {
+              id,
+              created_at,
+              updated_at,
+              embed,
+              url,
+              provider,
+            }
+          }
+        }
+      },
     }
   }
 `;

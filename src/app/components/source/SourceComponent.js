@@ -199,7 +199,7 @@ class SourceComponent extends Component {
     }
     const that = this;
     const pusher = this.getContext().pusher;
-    const pusherChannel = this.props.source.source.pusher_channel;
+    const pusherChannel = this.props.source.team_source.pusher_channel;
     if (pusher && pusherChannel) {
       pusher.subscribe(pusherChannel).bind('source_updated', (data) => {
         const source = this.getSource() || {};
@@ -224,7 +224,7 @@ class SourceComponent extends Component {
     }
     const pusher = this.getContext().pusher;
     if (pusher) {
-      pusher.unsubscribe(this.props.source.source.pusher_channel);
+      pusher.unsubscribe(this.props.source.team_source.pusher_channel);
     }
   }
 
@@ -248,11 +248,11 @@ class SourceComponent extends Component {
   }
 
   isProjectSource() {
-    return !!this.props.source.source;
+    return !!this.props.source.team_source;
   }
 
   getSource() {
-    const { source } = this.isProjectSource() ? this.props.source : this.props;
+    const source  = this.isProjectSource() ? this.props.source.team_source : this.props;
     return source;
   }
 
@@ -543,6 +543,8 @@ class SourceComponent extends Component {
 
   createTag(tagString) {
     const { source } = this.props;
+    console.log('Props*****************************', this.props);
+    console.log('Print Source ---------------------', source);
     const context = new CheckContext(this).getContextStore();
 
     const onFailure = (transaction) => {

@@ -15,10 +15,8 @@ class UpdateDynamicMutation extends Relay.Mutation {
       query = Relay.QL`fragment on UpdateDynamicPayload {
         dynamicEdge,
         source {
-          log,
           id,
-          log_count,
-          metadata: annotations(annotation_type: "metadata")
+          dbid
         }
       }`;
       break;

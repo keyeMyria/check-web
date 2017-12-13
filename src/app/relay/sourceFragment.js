@@ -1,7 +1,7 @@
 import Relay from 'react-relay';
 
 const sourceFragment = Relay.QL`
-  fragment on Source {
+  fragment on TeamSource {
     id,
     dbid,
     created_at,

@@ -25,7 +25,7 @@ const SourceContainer = Relay.createContainer(SourceComponent, {
           slug,
           get_suggested_tags,
         },
-        source {
+        team_source {
           id,
           dbid,
           created_at,
@@ -34,7 +34,6 @@ const SourceContainer = Relay.createContainer(SourceComponent, {
           image,
           user_id,
           description,
-          lock_version,
           permissions,
           pusher_channel,
           verification_statuses,

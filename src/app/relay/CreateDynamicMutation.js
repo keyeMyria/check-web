@@ -11,13 +11,12 @@ class CreateDynamicMutation extends Relay.Mutation {
   getFatQuery() {
     let query = '';
     switch (this.props.parent_type) {
-    case 'source':
+    case 'team_source':
       query = Relay.QL`fragment on CreateDynamicPayload {
         dynamicEdge,
         source {
-          log,
-          log_count,
-          languages: annotations(annotation_type: "language", first: 10000)
+          id,
+          dbid
         }
       }`;
       break;
@@ -37,7 +36,7 @@ class CreateDynamicMutation extends Relay.Mutation {
       query = Relay.QL`fragment on CreateDynamicPayload {
         dynamicEdge,
         project_source {
-          source {
+          team_source {
             log,
             log_count,
             languages: annotations(annotation_type: "language", first: 10000)

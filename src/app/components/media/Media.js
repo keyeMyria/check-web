@@ -36,7 +36,7 @@ const MediaContainer = Relay.createContainer(MediaParentComponent, {
         project_source {
           dbid,
           project_id,
-          source {
+          team_source {
             name
           }
         },
@@ -132,7 +132,6 @@ const MediaContainer = Relay.createContainer(MediaParentComponent, {
                     source {
                       id,
                       dbid,
-                      image,
                     }
                   }
                 }
@@ -169,7 +168,6 @@ const MediaContainer = Relay.createContainer(MediaParentComponent, {
                 source {
                   id,
                   dbid,
-                  image,
                 }
               }
               task {

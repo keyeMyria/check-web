@@ -26,7 +26,7 @@ class DeleteTagMutation extends Relay.Mutation {
       query = Relay.QL`fragment on DestroyTagPayload { deletedId, project_media { log, tags, log_count } }`;
       break;
     case 'project_source':
-      query = Relay.QL`fragment on DestroyTagPayload { deletedId, project_source { source { log, tags, log_count } } }`;
+      query = Relay.QL`fragment on DestroyTagPayload { deletedId, project_source { team_source { log, tags, log_count } } }`;
       break;
     }
     return query;

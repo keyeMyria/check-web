@@ -10,6 +10,7 @@ const userFragment = Relay.QL`
     permissions,
     provider,
     profile_image,
+    identity,
     current_team {
       id,
       dbid,

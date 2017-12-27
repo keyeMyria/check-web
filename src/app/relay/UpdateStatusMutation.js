@@ -12,7 +12,7 @@ class UpdateStatusMutation extends Relay.Mutation {
     let query = '';
     switch (this.props.parent_type) {
     case 'source':
-      query = Relay.QL`fragment on UpdateStatusPayload { statusEdge, source { log, log_count, id } }`;
+      query = Relay.QL`fragment on UpdateStatusPayload { statusEdge, source { id } }`;
       break;
     case 'project_media':
       query = Relay.QL`fragment on UpdateStatusPayload { statusEdge, project_media { log, id, last_status, log_count } }`;

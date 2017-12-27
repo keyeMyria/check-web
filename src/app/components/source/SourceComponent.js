@@ -543,8 +543,6 @@ class SourceComponent extends Component {
 
   createTag(tagString) {
     const { source } = this.props;
-    console.log('Props*****************************', this.props);
-    console.log('Print Source ---------------------', source);
     const context = new CheckContext(this).getContextStore();
 
     const onFailure = (transaction) => {

@@ -376,7 +376,7 @@ class CreateProjectMedia extends Component {
           name="quoteAttributionSource"
           filter={AutoComplete.fuzzyFilter}
           hintText={this.props.intl.formatMessage(messages.quoteAttributionSourceInput)}
-          dataSource={context.team.sources.edges.map(obj => obj.node.name)}
+          dataSource={context.team.team_sources.edges.map(obj => obj.node.name)}
           {...defaultInputProps}
         />,
       ];

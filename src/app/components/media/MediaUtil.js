@@ -86,7 +86,7 @@ const MediaUtil = {
 
   sourceName(media, data) {
     try {
-      return media.project_source.source.name;
+      return media.project_source.team_source.name;
     } catch (e) {
       return '';
     }

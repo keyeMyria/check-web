@@ -580,7 +580,7 @@ class SourceComponent extends Component {
           context,
           annotation: {
             tag: tag.trim(),
-            annotated_type: 'ProjectSource',
+            annotated_type: 'TeamSource',
             annotated_id: source.dbid,
           },
         }),
@@ -1474,7 +1474,7 @@ class SourceComponent extends Component {
               <section style={{ position: 'relative' }}>
                 <Can
                   permissions={source.permissions}
-                  permission="update Source"
+                  permission="update TeamSource"
                 >
                   <StyledEditButtonWrapper>
                     <StyledIconButton
@@ -1502,7 +1502,7 @@ class SourceComponent extends Component {
                 <Annotations
                   annotations={source.log.edges}
                   annotated={this.props.source}
-                  annotatedType="ProjectSource"
+                  annotatedType="TeamSource"
                   height="short"
                 />
                 ) : null}

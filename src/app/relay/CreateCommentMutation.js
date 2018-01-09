@@ -18,7 +18,7 @@ class CreateCommentMutation extends Relay.Mutation {
       query = Relay.QL`fragment on CreateCommentPayload { commentEdge, project_media { log, log_count } }`;
       break;
     case 'team_source':
-      query = Relay.QL`fragment on CreateCommentPayload { commentEdge, project_source { id } }`;
+      query = Relay.QL`fragment on CreateCommentPayload { commentEdge, team_source { log, log_count } }`;
       break;
     }
     return query;

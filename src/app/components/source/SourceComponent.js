@@ -1501,7 +1501,7 @@ class SourceComponent extends Component {
               {this.state.showTab === 'annotation' ? (
                 <Annotations
                   annotations={source.log.edges}
-                  annotated={this.props.source}
+                  annotated={source}
                   annotatedType="TeamSource"
                   height="short"
                 />
